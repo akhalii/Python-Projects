@@ -249,3 +249,83 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#_______________________________________________________________________________
+
+import random
+
+#getting seed from input
+import random
+
+#getting seed from input
+def get_netid_seed():
+    student_id = input("Please enter your netID: ")
+    seed = sum(ord(char) for char in student_id)
+    random.seed(seed)
+    return seed
+
+def generate_number(seed):
+    num = random.randint(1, 100)
+
+    return num
+
+def roll_five_int(seed):
+    random.seed(seed) #how to call a seed
+    total = 0
+    
+    for i in range(5):
+        num = random.randint(1,100)
+        total += num
+
+    return total
+
+def roll_five_float(seed):
+    random.seed(seed)
+    total = 0
+    
+    for i in range(5):
+        num = random.uniform(1,100)
+        total += num
+
+    return total
+
+def subtract(x, y):
+    if x > y:
+        difference = x - y
+        return difference
+    elif y > x:
+        difference = y - x
+        return difference
+
+def larger_value(x, y):
+    if x > y:
+        print(f"{x} is larger than {y}")
+    elif y > x:
+        print(f"{y} is larger than {x}")
+
+def division(x, y, z):
+    numerator = x + y
+
+    total = numerator / z
+    no_remainder = numerator // z
+
+    return total, no_remainder
+
+def display_total(total, no_remainder):
+    print(f"Total: {total}")
+    print(f"No Remainder: {total-no_remainder}")
+    
+
+def main():
+    myseed = get_netid_seed()
+    generate_number(myseed)
+    roll_five_int(myseed)
+    roll_five_float(myseed)
+    difference = subtract(roll_five_int(myseed),  roll_five_float(myseed))
+    larger_value(roll_five_int(myseed),  roll_five_float(myseed))
+    total, no_remainder = division(generate_number(myseed), roll_five_int(myseed), difference)
+    display_total(total,no_remainder)
+    
+
+if __name__ == "__main__":
+    main()
