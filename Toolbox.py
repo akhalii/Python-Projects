@@ -1,16 +1,16 @@
-#Toolbox
+# Toolbox
 
-#Bank System
+# Bank System
 
-#Constants
+# Constants
 MIN_BALANCE = 0.00
 OVERDRAFT_FEE = 35.00
 
-#Check balance
+# Check balance
 def check_balance(balance):
     print(f"\nBalance: ${balance:,.2f}\n")
 
-#Deposits
+# Deposits
 def deposit():
     deposit_amount = float(input("\nHow much would you like to deposit? "))
     if deposit_amount < 0.00:
@@ -19,7 +19,7 @@ def deposit():
     else:
         return deposit_amount
 
-#Withdraws
+# Withdraws
 def withdraw():
     withdraw_amount = float(input("\nHow much would you like to withdraw? "))
     if withdraw_amount < 0.00:
@@ -28,11 +28,11 @@ def withdraw():
     else:
         return withdraw_amount
 
-#Quit
+# Quit
 def exit_app():
     quit()
 
-#Display Menu
+# Display Menu
 def display_menu():
     min_balance = MIN_BALANCE
     overdraft_fee = OVERDRAFT_FEE
@@ -63,27 +63,29 @@ def display_menu():
 
 #_______________________________________________________________________________
 
-#Adding numbers
+# basic math
+
+# Adding numbers
 def add(a, b):
     return a + b
 
-#Subtracting numbers
+# Subtracting numbers
 def subtract(a, b):
     return a - b
 
-#Multiplying numbers
+# Multiplying numbers
 def multiply(a, b):
     return a * b
 
-#Dividing numbers
+# Dividing numbers
 def divide(a, b):
     if b != 0:
         return a / b
     else:
         return "Cannot divide by zero"
 
-#Running all functions
-def main():
+# Running all functions
+def display():
     x = 10
     y = 5
     print(f"Addition: {add(x, y)}")
@@ -93,7 +95,9 @@ def main():
 
 #_______________________________________________________________________________
 
-#Gets Employee Data
+# how to do menus
+
+# Gets Employee Data
 def get_employee_data():
     name = input("Enter name: ")
     hours_worked = float(input("Hours worked: "))
@@ -101,7 +105,7 @@ def get_employee_data():
 
     return name, hours_worked, hourly_wage
 
-#Calculates Payroll
+# Calculates Payroll
 def calculate_payroll(hours_worked, hourly_wage):
     if hours_worked > 40:
         overtime = ((hours_worked - 40) * 1.5) + 40
@@ -112,19 +116,19 @@ def calculate_payroll(hours_worked, hourly_wage):
         total_pay = hours_worked * hourly_wage
         return total_pay
 
-#Displays Pay
+# Displays Pay
 def display_employee_pay(name, total_pay):
     print(f"Name: {name}")
     print(f"Pay: {total_pay:,.2f}")
 
-#Gets Order Data
+# Gets Order Data
 def get_order_data():
     name = input("Enter name: ")
     order_total = float(input("How much was your order? "))
 
     return name, order_total
 
-#Calculates Order Discount
+# Calculates Order Discount
 def calculate_discount(order_total):
     if order_total <= 500:
         return order_total
@@ -132,26 +136,26 @@ def calculate_discount(order_total):
         discounted_amount = order_total * .9
         return discounted_amount
 
-#Displays Order Summary
+# Displays Order Summary
 def display_order_summary(customer_name, original_total, discounted_total):
     print(f"Name: {customer_name}")
     print(f"Original order total: {original_total}")
     print(f"Discounted order total: {discounted_total}")
 
-#Get Monthly Revenue and Expenses
+# Get Monthly Revenue and Expenses
 def get_monthly_data():
     monthly_revenue = float(input("Monthly Revenue? "))
     monthly_expenses = float(input("Monthly Expenses? "))
 
     return monthly_revenue, monthly_expenses
 
-#Calculates Net Profit or Net Loss
+# Calculates Net Profit or Net Loss
 def calculate_profit_or_loss(revenue, expenses):
     profit = revenue - expenses
 
     return profit
 
-#Displays Net Profit or Net Loss Summary
+# Displays Net Profit or Net Loss Summary
 def display_profit_summary(profit):
     if profit < 0:
         difference = profit * -1
@@ -163,7 +167,7 @@ def display_profit_summary(profit):
         print(f"Net Profit: {profit:,.2f}")
         print(f"Difference: {profit:,.2f}")
 
-#Menu
+# Menu
 def display_menu():
     print("1. Payroll Calculator")
     print("2. Customer Orders Processor")
@@ -174,7 +178,7 @@ def display_menu():
 
     return choice
 
-#Processes Menu Choice
+# Processes Menu Choice
 def process_menu_choice(choice):
 
     if choice == 1:
@@ -200,8 +204,8 @@ def process_menu_choice(choice):
         print()
         display_profit_summary(profit)
     
-#Main
-def main():
+# Main
+def show_code():
     while True:
         print()
         choice = display_menu()
@@ -210,122 +214,34 @@ def main():
         if choice == 4:
             break
 
-if __name__ == "__main__":
-    main()
-
 #_______________________________________________________________________________
 
-def user_input():
-    while True:
-        try:
-            days_collected = int(input("How many days have you been collecting bugs? "))
-            if days_collected < 0:
-                print("Please enter a postive number.")
-            else:
-                return days_collected
+# method return and catch
 
-def collect_bugs(day_number):
-    while True:
-        try:
-            bugs = int(input(f"Enter number of bugs collected on Day {day_number}: "))
-            if bugs < 0:
-                print("Please enter a non-negative.")
-            else:
-                return bugs
-        except ValueError:
-            print("Invalid input. Please enter numbers.")
-
-def calculate_total_bugs():
-    total = 0
-    for day in range(1,6):
-        bug_collected = collect_bugs(day)
-        total += bug_collected
-    return total
-
-def main():
-    print("Bug collecter program")
-    total = calculate_total_bugs()
-    print(f"Total bugs collected over five days: {total}")
-
-if __name__ == "__main__":
-    main()
-
+def multiply(a,b,c):
+    return a*b, c #if returning 2
+    
+def sdjkafljewiof():
+    multiple2, multiple3 = multiply(1,2,3) #catch 2
+    
 #_______________________________________________________________________________
 
-import random
+# files
 
-#getting seed from input
-import random
+file = open("example.txt", "r") #open("file name", "r or w or a") (r = read, w = write, a = append)
 
-#getting seed from input
-def get_netid_seed():
-    student_id = input("Please enter your netID: ")
-    seed = sum(ord(char) for char in student_id)
-    random.seed(seed)
-    return seed
+file.close() # closes file
 
-def generate_number(seed):
-    num = random.randint(1, 100)
+# write file
+with open("example.txt", "w") as file:
+    file.write("hello world\n")
+    file.write("this is a test\n")
 
-    return num
-
-def roll_five_int(seed):
-    random.seed(seed) #how to call a seed
-    total = 0
+# appends (add text) file
+with open("example.txt", "a") as file:
+    file.write("fjdkslfjdsk")
     
-    for i in range(5):
-        num = random.randint(1,100)
-        total += num
-
-    return total
-
-def roll_five_float(seed):
-    random.seed(seed)
-    total = 0
-    
-    for i in range(5):
-        num = random.uniform(1,100)
-        total += num
-
-    return total
-
-def subtract(x, y):
-    if x > y:
-        difference = x - y
-        return difference
-    elif y > x:
-        difference = y - x
-        return difference
-
-def larger_value(x, y):
-    if x > y:
-        print(f"{x} is larger than {y}")
-    elif y > x:
-        print(f"{y} is larger than {x}")
-
-def division(x, y, z):
-    numerator = x + y
-
-    total = numerator / z
-    no_remainder = numerator // z
-
-    return total, no_remainder
-
-def display_total(total, no_remainder):
-    print(f"Total: {total}")
-    print(f"No Remainder: {total-no_remainder}")
-    
-
-def main():
-    myseed = get_netid_seed()
-    generate_number(myseed)
-    roll_five_int(myseed)
-    roll_five_float(myseed)
-    difference = subtract(roll_five_int(myseed),  roll_five_float(myseed))
-    larger_value(roll_five_int(myseed),  roll_five_float(myseed))
-    total, no_remainder = division(generate_number(myseed), roll_five_int(myseed), difference)
-    display_total(total,no_remainder)
-    
-
-if __name__ == "__main__":
-    main()
+# reads file (prints it)
+with open("example.txt", "r") as file:
+    for line in file:
+        print(line.strip()) # .strip() deletes blank lines
