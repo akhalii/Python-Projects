@@ -245,3 +245,66 @@ with open("example.txt", "a") as file:
 with open("example.txt", "r") as file:
     for line in file:
         print(line.strip()) # .strip() deletes blank lines
+
+#_______________________________________________________________________________
+
+# arrays, tuples, and matrixes
+
+list1 = [1,2,3,4,5]
+list2 = [6,7,8,9,10]
+
+list1[0] = 30 # changes position of item to another item
+list1.append(10) # adds to array
+list1.insert(0, "pizza") # inserts into the position in array
+del list1[0] # deletes item in that position in array
+list1.remove("pizza") # removes item from array
+list1.pop(0) # pull item out of array
+
+for x in list1:   # lists all items in array
+    print(x)
+
+x = 0
+while x < len(list1):
+    print(list1 [x])
+    x += 1
+
+combined = list1 + list2 # adds two arrays
+print(combined)
+
+combined = (list1 * 3) # multiplies array by number
+print(combined)
+
+combined.reverse() # flips it array
+print(combined)
+
+combined.sort() # sorts array
+print(combined)
+
+squares = [x%2 for x in range(50)] # math function in array
+print(squares)
+
+my_tuple = (1,2,3) # tuple is a constant, but same commands as arrays
+print (my_tuple[0])
+print (my_tuple[-1])
+
+array = [1,2,3]
+
+matrix = [  # contains multiple arrays
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+    ]
+
+print (matrix[1][1]) # prints specific item in matrix
+
+for array in matrix:    # makes a board
+    for x in array:
+        print(x, end=" ")
+    print()
+
+numbers = [10,20,30]
+
+print(sum(numbers)) # sums up all items in array
+print(min(numbers)) # prints smallest number
+print(max(numbers)) # prints largest number
+print(len(numbers)) # prints how many items in array
