@@ -1,4 +1,16 @@
 # Toolbox
+#_______________________________________________________________________________
+
+# Enter Positive Number only
+while True:
+    try:
+        choice = int(input("Prompt"))
+        if choice <= 0:
+            print("Enter a number greater than 0.")
+        else:
+            break
+    except ValueError:
+        print("Enter a number.")
 
 # Bank System
 
