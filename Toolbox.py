@@ -341,3 +341,42 @@ import os
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
+
+#_______________________________________________________________________________
+
+messy_string = "       Hello!          ,          World        "
+
+print(messy_string)
+print(messy_string.strip()) # strips blanks
+print(messy_string.lstrip()) # strips blanks left of element
+print(messy_string.rstrip()) # strips blanks right of element
+
+first_name = "Kha"
+last_name = "Nguyen"
+
+full_name = first_name + " " + last_name
+print(full_name)
+
+print(full_name.lower()) # lower cases all characters
+print(full_name.upper()) # CAPS all characters
+
+password = "Secure123"
+
+print(password.isalpha()) # checks if there is alphabets
+print(password.isdigit()) # checks if there is digits
+print(password.isalnum()) # checks if there is alphabets and digits
+print(password.isupper()) # checks if there is upper case
+print(password.islower()) # checks if there is lower case
+
+phrase = "Python Programming"
+
+print(phrase[:6]) # prints 6 letters to the right
+print(phrase[7:]) # prints 7 letters to the left
+print(phrase[:-11]) # prints 11 letters to the left
+
+csv_data = "Python,Java,C++,Javascript"
+languages = csv_data.split(",")
+print(languages)
+
+separator = ", "
+print(separator.join(languages))
