@@ -275,10 +275,9 @@ list1.pop(0) # pull item out of array
 for x in list1:   # lists all items in array
     print(x)
 
-x = 0
-while x < len(list1):
-    print(list1 [x])
-    x += 1
+# lists items in array
+for x, items in enumerate(list1, start=1):
+    print(x, items)
 
 combined = list1 + list2 # adds two arrays
 print(combined)
@@ -320,6 +319,20 @@ print(sum(numbers)) # sums up all items in array
 print(min(numbers)) # prints smallest number
 print(max(numbers)) # prints largest number
 print(len(numbers)) # prints how many items in array
+
+# x[1] is referring to second element
+max(x[1] for x in list) # largest second element in tuple 
+min(x[1] for x in list) # smallest second element in tuple
+list.sort(key=lambda x: x[1], reverse = True) # sort tuple in descending order accorcing to second element
+
+# adds items in .txt file into tuple and splits into two elements
+list_of_students = []
+with open("grades.txt", "r") as file:
+    for line in file:
+        parts = line.strip().split(': ')
+        if len(parts) == 2:
+            student, grade = parts
+            list_of_students.append((student, int(grade)))
 
 #_______________________________________________________________________________
 
