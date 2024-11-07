@@ -308,3 +308,11 @@ print(sum(numbers)) # sums up all items in array
 print(min(numbers)) # prints smallest number
 print(max(numbers)) # prints largest number
 print(len(numbers)) # prints how many items in array
+
+#_______________________________________________________________________________
+
+# Clear screen
+import os
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
