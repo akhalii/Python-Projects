@@ -380,3 +380,40 @@ print(languages)
 
 separator = ", "
 print(separator.join(languages))
+
+#_______________________________________________________________________________
+
+# Dictionaries
+
+phonebook = {'Chris': '555-1111',
+             'Katie': '555-2222',
+             'Joanne': '555-3333'}
+
+print(phonebook['Chris']) # output: 555-1111
+
+key = 'Unknown'
+if key in phonebook:
+    print(phonebook[key]) # read
+else:
+    print("Key not found.")
+
+phonebook['Joe'] = '555-4444' # adds to dictionary if there is no key
+phonebook['Chris']  = '555-9999' # changes second element
+del phonebook['Katie'] # deletes all Katie
+removed = phonebook.pop('Chris', 'Not Found')
+print(removed) # pop
+
+for key in phonebook: # lists all keys
+    print(key)
+
+for value in phonebook.values(): # lists all values
+    print(value)
+
+for key, value in phonebook.items(): # lists all keys and values in item
+    print(f"{key}: {value}")
+
+squares = {x: x**2 for x in range(5)}
+
+for key, value in squares.items(): # math
+    print(f"{key},{value}")
+
